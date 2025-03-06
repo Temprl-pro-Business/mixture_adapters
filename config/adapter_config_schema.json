@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "adapters": {
+            "type": "object",
+            "properties": {
+                "hub_adapters": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name to identify the adapter"
+                            },
+                            "repo_id": {
+                                "type": "string",
+                                "description": "HuggingFace Hub repository ID"
+                            }
+                        },
+                        "required": ["name", "repo_id"]
+                    }
+                },
+                "local_adapters": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name to identify the adapter"
+                            },
+                            "path": {
+                                "type": "string",
+                                "description": "Local path to the adapter directory"
+                            }
+                        },
+                        "required": ["name", "path"]
+                    }
+                }
+            }
+        }
+    },
+    "required": ["adapters"]
+} 

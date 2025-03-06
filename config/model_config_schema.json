@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "model_settings": {
+            "type": "object",
+            "properties": {
+                "base_model": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Name of the base model to use"
+                        },
+                        "load_in_8bit": {
+                            "type": "boolean",
+                            "description": "Whether to load model in 8-bit precision"
+                        },
+                        "load_in_4bit": {
+                            "type": "boolean",
+                            "description": "Whether to load model in 4-bit precision"
+                        }
+                    },
+                    "required": ["name"]
+                },
+                "embedding_model": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Name of the embedding model to use"
+                        },
+                        "similarity_threshold": {
+                            "type": "number",
+                            "description": "Minimum similarity score for routing",
+                            "minimum": 0,
+                            "maximum": 1
+                        }
+                    },
+                    "required": ["name"]
+                }
+            },
+            "required": ["base_model", "embedding_model"]
+        },
+        "generation_settings": {
+            "type": "object",
+            "properties": {
+                "max_new_tokens": {
+                    "type": "integer",
+                    "description": "Maximum number of tokens to generate",
+                    "minimum": 1
+                },
+                "temperature": {
+                    "type": "number",
+                    "description": "Sampling temperature",
+                    "minimum": 0
+                },
+                "top_p": {
+                    "type": "number",
+                    "description": "Top-p sampling threshold",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "top_k": {
+                    "type": "integer",
+                    "description": "Top-k sampling threshold",
+                    "minimum": 0
+                },
+                "repetition_penalty": {
+                    "type": "number",
+                    "description": "Repetition penalty",
+                    "minimum": 0
+                },
+                "do_sample": {
+                    "type": "boolean",
+                    "description": "Whether to use sampling for generation"
+                },
+                "num_beams": {
+                    "type": "integer",
+                    "description": "Number of beams for beam search",
+                    "minimum": 1
+                }
+            },
+            "required": ["max_new_tokens", "temperature", "do_sample"]
+        }
+    },
+    "required": ["model_settings", "generation_settings"]
+} 

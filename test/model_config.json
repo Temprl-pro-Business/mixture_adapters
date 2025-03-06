@@ -1,0 +1,17 @@
+{
+    "model_settings": {
+        "base_model": {
+            "name": "Qwen/Qwen2.5-1.5B-Instruct",
+            "load_in_8bit": false,
+            "load_in_4bit": true
+        },
+        "embedding_model": {
+            "name": "sentence-transformers/all-MiniLM-L6-v2",
+            "similarity_threshold": 0.7
+        }
+    },
+    "generation_settings": {
+        "max_new_tokens": 512,
+        "temperature": 0.7
+    }
+} 

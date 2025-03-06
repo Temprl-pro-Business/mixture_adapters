@@ -1,0 +1,23 @@
+{
+    "generation_settings": {
+        "max_new_tokens": 2048,
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 50,
+        "repetition_penalty": 1.1,
+        "do_sample": true,
+        "num_beams": 1
+    },
+    "adapters": {
+        "hub_adapters": [
+            {
+                "name": "tweet_adapter",
+                "repo_id": "SriSanth2345/Qwen-1.5B-Tweet-Generations"
+            },
+            {
+                "name": "chinese_text_correction_adapter",
+                "repo_id": "SriSanth2345/Qwen-1.5B-Chinese-Text-Correction"
+            }
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "model_settings": {
+        "base_model": {
+            "name": "unsloth/Qwen2.5-1.5B-Instruct-unsloth-bnb-4bit",
+            "load_in_8bit": false,
+            "load_in_4bit": true
+        },
+        "embedding_model": {
+            "name": "sentence-transformers/all-MiniLM-L6-v2",
+            "similarity_threshold": 0.7
+        }
+    },
+    "generation_settings": {
+        "max_new_tokens": 512,
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 50,
+        "repetition_penalty": 1.1,
+        "do_sample": true,
+        "num_beams": 1
+    }
+} 
