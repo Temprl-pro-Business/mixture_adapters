@@ -21,7 +21,9 @@ pip install -r requirements.txt```
 
 The system uses a JSON configuration file to manage adapters. By default, it looks for `adapter_config.json` in the current directory. If not found, it will create an example configuration file.
 
-### Configuration File Structure```json
+### Configuration File Structure
+
+```json
 {
     "adapters": {
         "hub_adapters": [
